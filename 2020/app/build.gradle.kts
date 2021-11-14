@@ -13,6 +13,9 @@ plugins {
 
     // Apply the application plugin to add support for building a CLI application in Java.
     application
+
+    // keep code nice and clean
+    id("com.diffplug.spotless") version "6.0.0"
 }
 
 repositories {
@@ -49,5 +52,18 @@ testing {
 
 application {
     // Define the main class for the application.
-    mainClass.set("org.snowi.aoc2020.puzzle1.Puzzle1")
+    mainClass.set("org.snowi.aoc2020.puzzle2.Puzzle2")
 }
+
+spotless {
+    scala {
+      // by default, all `.scala` and `.sc` files in the java sourcesets will be formatted
+  
+      scalafmt() // has its own section below
+  
+      licenseHeader("/* (C) stefan.devops@gmail.com 2021 */", "package") // or licenseHeaderFile
+      // note the 'package ' argument - this is a regex which identifies the top
+      // of the file, be careful that all of your sources have a package declaration,
+      // or pick a regex which works better for your code
+    }
+  }

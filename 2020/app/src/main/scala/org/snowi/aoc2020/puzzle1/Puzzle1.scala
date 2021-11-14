@@ -1,15 +1,11 @@
-/*
- * https://adventofcode.com/2020/day/1
- */
+/* (C) stefan.devops@gmail.com 2021 */
 package org.snowi.aoc2020.puzzle1
 
 object Puzzle1 {
   def main(args: Array[String]): Unit = {
-    
+
     println(answer(readFile("puzzle1/input.txt")))
   }
-
-  def greeting(): String = "Hello, world!"
 
   def answer(expenseReport: Array[Int]): Int = {
     var y = 0

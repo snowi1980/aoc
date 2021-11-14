@@ -1,0 +1,8 @@
+# remove vs-code metals
+.meatals/
+
+# vscode fiels
+.vscode/
+
+# ignore idea
+.idea/
