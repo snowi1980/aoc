@@ -49,5 +49,5 @@ testing {
 
 application {
     // Define the main class for the application.
-    mainClass.set("org.snowi.aoc2020.App")
+    mainClass.set("org.snowi.aoc2020.puzzle1.Puzzle1")
 }
