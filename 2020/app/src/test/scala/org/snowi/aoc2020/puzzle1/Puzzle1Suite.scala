@@ -10,7 +10,11 @@ class Puzzle1Suite extends AnyFunSuite {
 
   var expenseReport = Array(1721, 979, 366, 299, 675, 1456)
 
-  test("App has a greeting") {
-    assert(Puzzle1.answer(expenseReport) == 514579)
+  test("answer puzzle 1 part 1") {
+    assert(Puzzle1.answer1(expenseReport) == 514579)
+  }
+
+  test("answer puzzle 1 part 2") {
+    assert(Puzzle1.answer2(expenseReport) == 241861950)
   }
 }
