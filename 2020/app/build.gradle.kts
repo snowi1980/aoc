@@ -32,6 +32,14 @@ dependencies {
 
     // This dependency is used by the application.
     implementation("com.google.guava:guava:30.1.1-jre")
+
+    // https://mvnrepository.com/artifact/com.typesafe.scala-logging/scala-logging
+    implementation("com.typesafe.scala-logging:scala-logging_3:3.9.4")
+
+    // https://mvnrepository.com/artifact/ch.qos.logback/logback-classic
+    implementation("ch.qos.logback:logback-classic:1.2.7")
+
+
 }
 
 testing {

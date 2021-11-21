@@ -3,6 +3,7 @@ package org.snowi.aoc2020
 
 import org.snowi.aoc2020.puzzle1.Puzzle1
 import org.snowi.aoc2020.puzzle2.Puzzle2
+import org.snowi.aoc2020.puzzle3.Puzzle3
 
 object App {
   def main(args: Array[String]): Unit = {
@@ -12,6 +13,7 @@ object App {
   def answers(): Unit = {
     Puzzle1.answer()
     Puzzle2.answer()
+    Puzzle3.answer()
   }
 
 }
