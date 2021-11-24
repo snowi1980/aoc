@@ -1,13 +1,9 @@
-# remove vs-code metals
-.meatals/
-
-# vscode fiels
-.vscode/
-
-# ignore idea
-.idea/
 # Ignore Gradle project-specific cache directory
 .gradle
 
 # Ignore Gradle build output directory
 build
+out
+
+# Ignore metals
+.metals
