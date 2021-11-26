@@ -43,6 +43,8 @@ class Puzzle2Suite extends AnyFunSuite {
     assert(!Puzzle2.checkPolicy1("1-3 b: cdefg"))
   }
 
+
+
   test("corrupted PW for policy v2") {
     assert(!Puzzle2.checkPolicy2("1-3 b: cdefg"))
     assert(!Puzzle2.checkPolicy2("2-9 c: ccccccccc"))
