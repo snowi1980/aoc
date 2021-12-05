@@ -18,6 +18,12 @@ public class Puzzle2Test {
   }
 
   @Test
+  void testAnswer2() {
+    Puzzle2 puzzle2 = TestSupport.puzzle2;
+    assertThat(puzzle2.answer2(puzzle2.getInput())).isEqualTo("900");
+  }
+
+  @Test
   void testCommands() {
     String[] commands = {"forward 5", "down 5", "forward 8", "up 3", "down 8", "forward 2"};
     Puzzle2.Position pos = Puzzle2.createPosition();
@@ -64,5 +70,40 @@ public class Puzzle2Test {
             () -> {
               pos.move(command);
             });
+  }
+
+  @Test
+  void testAimedMovements() {
+    Puzzle2.AimedPosition aimedPosition = Puzzle2.createAimedPosition();
+
+    aimedPosition.move("forward 5");
+    assertThat(aimedPosition.getDepth()).isEqualTo(0);
+    assertThat(aimedPosition.getHorizontal()).isEqualTo(5);
+    assertThat(aimedPosition.getAim()).isEqualTo(0);
+
+    aimedPosition.move("down 5");
+    assertThat(aimedPosition.getDepth()).isEqualTo(0);
+    assertThat(aimedPosition.getHorizontal()).isEqualTo(5);
+    assertThat(aimedPosition.getAim()).isEqualTo(5);
+
+    aimedPosition.move("forward 8");
+    assertThat(aimedPosition.getDepth()).isEqualTo(40);
+    assertThat(aimedPosition.getHorizontal()).isEqualTo(13);
+    assertThat(aimedPosition.getAim()).isEqualTo(5);
+
+    aimedPosition.move("up 3");
+    assertThat(aimedPosition.getDepth()).isEqualTo(40);
+    assertThat(aimedPosition.getHorizontal()).isEqualTo(13);
+    assertThat(aimedPosition.getAim()).isEqualTo(2);
+
+    aimedPosition.move("down 8");
+    assertThat(aimedPosition.getDepth()).isEqualTo(40);
+    assertThat(aimedPosition.getHorizontal()).isEqualTo(13);
+    assertThat(aimedPosition.getAim()).isEqualTo(10);
+
+    aimedPosition.move("forward 2");
+    assertThat(aimedPosition.getDepth()).isEqualTo(60);
+    assertThat(aimedPosition.getHorizontal()).isEqualTo(15);
+    assertThat(aimedPosition.getAim()).isEqualTo(10);
   }
 }

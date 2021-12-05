@@ -24,10 +24,15 @@ public class Puzzle2 extends Puzzle {
 
   @Override
   public String answer2(List<String> input) {
-    return null;
+    AimedPosition position = createAimedPosition();
+    input.forEach(
+        command -> {
+          position.move(command);
+        });
+    return String.valueOf(position.finalPosition());
   }
 
-  public static class Position {
+  static class Position {
     private static final String FORWARD = "forward";
     private static final String DOWN = "down";
     private static final String UP = "up";
@@ -98,7 +103,35 @@ public class Puzzle2 extends Puzzle {
     }
   }
 
+  static class AimedPosition extends Position {
+    private int aim;
+
+    @Override
+    public void forward(int acceleration) {
+      super.forward(acceleration);
+      super.down(acceleration * aim);
+    }
+
+    @Override
+    public void down(int sink) {
+      aim += sink;
+    }
+
+    @Override
+    public void up(int raise) {
+      aim -= raise;
+    }
+
+    public int getAim() {
+      return aim;
+    }
+  }
+
   static Position createPosition() {
     return new Puzzle2.Position();
+  }
+
+  static AimedPosition createAimedPosition() {
+    return new Puzzle2.AimedPosition();
   }
 }
