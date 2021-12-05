@@ -64,6 +64,7 @@ public abstract class Puzzle {
   }
 
   private File getFile(String fileName) throws IOException {
+    Args.checkNotBlank(fileName, "provided fileName is empty");
     ClassLoader classLoader = getClass().getClassLoader();
     URL resource = classLoader.getResource(fileName);
 
