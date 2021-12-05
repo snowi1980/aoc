@@ -6,7 +6,9 @@ https://adventofcode.com/2021
 Environment setup
 -----------------
 
-
+```shell
+$ sdk env
+```
 
 Run 
 ---

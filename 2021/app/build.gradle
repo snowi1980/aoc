@@ -12,7 +12,7 @@ plugins {
     id 'idea'
 
     // keep code nice and clean
-    id 'com.diffplug.spotless' version '6.0.0'
+    id 'com.diffplug.spotless' version '6.0.2'
 
     id 'jacoco'
 

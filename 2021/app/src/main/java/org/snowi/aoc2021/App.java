@@ -11,14 +11,15 @@ import java.util.List;
 
 public class App {
 
-    private static final Logger logger = LoggerFactory.getLogger(App.class);
+  private static final Logger logger = LoggerFactory.getLogger(App.class);
 
-    public static void main(String[] args) {
-        List<Puzzle> puzzles = new ArrayList<>();
-        puzzles.add(new Puzzle1("puzzle1/input.txt"));
+  public static void main(String[] args) {
+    List<Puzzle> puzzles = new ArrayList<>();
+    puzzles.add(new Puzzle1("puzzle1/input.txt"));
 
-        puzzles.forEach(puzzle -> {
-            puzzle.answer();
+    puzzles.forEach(
+        puzzle -> {
+          puzzle.answer();
         });
-    }
+  }
 }
