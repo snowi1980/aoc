@@ -6,6 +6,7 @@ import org.slf4j.LoggerFactory;
 import org.snowi.aoc.core.Puzzle;
 import org.snowi.aoc2021.puzzle1.Puzzle1;
 import org.snowi.aoc2021.puzzle2.Puzzle2;
+import org.snowi.aoc2021.puzzle3.Puzzle3;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +19,7 @@ public class App {
     List<Puzzle> puzzles = new ArrayList<>();
     puzzles.add(new Puzzle1("puzzle1/input.txt"));
     puzzles.add(new Puzzle2("puzzle2/input.txt"));
+    puzzles.add(new Puzzle3("puzzle3/input.txt"));
 
     puzzles.forEach(
         puzzle -> {
